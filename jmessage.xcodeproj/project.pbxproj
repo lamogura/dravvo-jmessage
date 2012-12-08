@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE20690B1673807600A90A6F /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2068F31673807600A90A6F /* NSObject+SBJson.m */; };
+		CE20690C1673807600A90A6F /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2068F61673807600A90A6F /* SBJsonParser.m */; };
+		CE20690D1673807600A90A6F /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2068F81673807600A90A6F /* SBJsonStreamParser.m */; };
+		CE20690E1673807600A90A6F /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2068FA1673807600A90A6F /* SBJsonStreamParserAccumulator.m */; };
+		CE20690F1673807600A90A6F /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2068FC1673807600A90A6F /* SBJsonStreamParserAdapter.m */; };
+		CE2069101673807600A90A6F /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2068FE1673807600A90A6F /* SBJsonStreamParserState.m */; };
+		CE2069111673807600A90A6F /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2069001673807600A90A6F /* SBJsonStreamWriter.m */; };
+		CE2069121673807600A90A6F /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2069021673807600A90A6F /* SBJsonStreamWriterAccumulator.m */; };
+		CE2069131673807600A90A6F /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2069041673807600A90A6F /* SBJsonStreamWriterState.m */; };
+		CE2069141673807600A90A6F /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2069061673807600A90A6F /* SBJsonTokeniser.m */; };
+		CE2069151673807600A90A6F /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2069081673807600A90A6F /* SBJsonUTF8Stream.m */; };
+		CE2069161673807600A90A6F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20690A1673807600A90A6F /* SBJsonWriter.m */; };
+		CE20691D1673807D00A90A6F /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20691A1673807D00A90A6F /* JASidePanelController.m */; };
+		CE20691E1673807D00A90A6F /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20691C1673807D00A90A6F /* UIViewController+JASidePanel.m */; };
+		CE2069231673808700A90A6F /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2069201673808700A90A6F /* arrow.png */; };
+		CE2069241673808700A90A6F /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2069221673808700A90A6F /* PullRefreshTableViewController.m */; };
+		CE206930167380CA00A90A6F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE20692F167380CA00A90A6F /* QuartzCore.framework */; };
+		CE2069311673817E00A90A6F /* DVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2069261673809B00A90A6F /* DVAppDelegate.m */; };
+		CE2069321673818200A90A6F /* DVDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2069291673809B00A90A6F /* DVDownloader.m */; };
+		CE2069331673818500A90A6F /* DVRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20692B1673809B00A90A6F /* DVRootViewController.m */; };
+		CE2069341673818800A90A6F /* DVSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20692D1673809B00A90A6F /* DVSettingsViewController.m */; };
+		CE206935167381B200A90A6F /* DVSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE20692E1673809B00A90A6F /* DVSettingsViewController.xib */; };
+		CE6983EA16737FB600BC6799 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6983E916737FB600BC6799 /* UIKit.framework */; };
+		CE6983EC16737FB600BC6799 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6983EB16737FB600BC6799 /* Foundation.framework */; };
+		CE6983EE16737FB600BC6799 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6983ED16737FB600BC6799 /* CoreGraphics.framework */; };
+		CE6983F416737FB600BC6799 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE6983F216737FB600BC6799 /* InfoPlist.strings */; };
+		CE6983F616737FB600BC6799 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6983F516737FB600BC6799 /* main.m */; };
+		CE6983FC16737FB600BC6799 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6983FB16737FB600BC6799 /* Default.png */; };
+		CE6983FE16737FB600BC6799 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6983FD16737FB600BC6799 /* Default@2x.png */; };
+		CE69840016737FB600BC6799 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6983FF16737FB600BC6799 /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CE2068F21673807600A90A6F /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		CE2068F31673807600A90A6F /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		CE2068F41673807600A90A6F /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		CE2068F51673807600A90A6F /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		CE2068F61673807600A90A6F /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		CE2068F71673807600A90A6F /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		CE2068F81673807600A90A6F /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		CE2068F91673807600A90A6F /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		CE2068FA1673807600A90A6F /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		CE2068FB1673807600A90A6F /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		CE2068FC1673807600A90A6F /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		CE2068FD1673807600A90A6F /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		CE2068FE1673807600A90A6F /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		CE2068FF1673807600A90A6F /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		CE2069001673807600A90A6F /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		CE2069011673807600A90A6F /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		CE2069021673807600A90A6F /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		CE2069031673807600A90A6F /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		CE2069041673807600A90A6F /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		CE2069051673807600A90A6F /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		CE2069061673807600A90A6F /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		CE2069071673807600A90A6F /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		CE2069081673807600A90A6F /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		CE2069091673807600A90A6F /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		CE20690A1673807600A90A6F /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		CE2069191673807D00A90A6F /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
+		CE20691A1673807D00A90A6F /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
+		CE20691B1673807D00A90A6F /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
+		CE20691C1673807D00A90A6F /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
+		CE2069201673808700A90A6F /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		CE2069211673808700A90A6F /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
+		CE2069221673808700A90A6F /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		CE2069251673809B00A90A6F /* DVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVAppDelegate.h; sourceTree = "<group>"; };
+		CE2069261673809B00A90A6F /* DVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DVAppDelegate.m; sourceTree = "<group>"; };
+		CE2069271673809B00A90A6F /* DVConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVConstants.h; sourceTree = "<group>"; };
+		CE2069281673809B00A90A6F /* DVDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVDownloader.h; sourceTree = "<group>"; };
+		CE2069291673809B00A90A6F /* DVDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DVDownloader.m; sourceTree = "<group>"; };
+		CE20692A1673809B00A90A6F /* DVRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVRootViewController.h; sourceTree = "<group>"; };
+		CE20692B1673809B00A90A6F /* DVRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DVRootViewController.m; sourceTree = "<group>"; };
+		CE20692C1673809B00A90A6F /* DVSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVSettingsViewController.h; sourceTree = "<group>"; };
+		CE20692D1673809B00A90A6F /* DVSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DVSettingsViewController.m; sourceTree = "<group>"; };
+		CE20692E1673809B00A90A6F /* DVSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DVSettingsViewController.xib; sourceTree = "<group>"; };
+		CE20692F167380CA00A90A6F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CE6983E516737FB600BC6799 /* jmessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jmessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE6983E916737FB600BC6799 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CE6983EB16737FB600BC6799 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE6983ED16737FB600BC6799 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE6983F116737FB600BC6799 /* jmessage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "jmessage-Info.plist"; sourceTree = "<group>"; };
+		CE6983F316737FB600BC6799 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE6983F516737FB600BC6799 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE6983F716737FB600BC6799 /* jmessage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jmessage-Prefix.pch"; sourceTree = "<group>"; };
+		CE6983FB16737FB600BC6799 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CE6983FD16737FB600BC6799 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CE6983FF16737FB600BC6799 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE6983E216737FB600BC6799 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE206930167380CA00A90A6F /* QuartzCore.framework in Frameworks */,
+				CE6983EA16737FB600BC6799 /* UIKit.framework in Frameworks */,
+				CE6983EC16737FB600BC6799 /* Foundation.framework in Frameworks */,
+				CE6983EE16737FB600BC6799 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE2068F11673807600A90A6F /* SBJSON */ = {
+			isa = PBXGroup;
+			children = (
+				CE2068F21673807600A90A6F /* NSObject+SBJson.h */,
+				CE2068F31673807600A90A6F /* NSObject+SBJson.m */,
+				CE2068F41673807600A90A6F /* SBJson.h */,
+				CE2068F51673807600A90A6F /* SBJsonParser.h */,
+				CE2068F61673807600A90A6F /* SBJsonParser.m */,
+				CE2068F71673807600A90A6F /* SBJsonStreamParser.h */,
+				CE2068F81673807600A90A6F /* SBJsonStreamParser.m */,
+				CE2068F91673807600A90A6F /* SBJsonStreamParserAccumulator.h */,
+				CE2068FA1673807600A90A6F /* SBJsonStreamParserAccumulator.m */,
+				CE2068FB1673807600A90A6F /* SBJsonStreamParserAdapter.h */,
+				CE2068FC1673807600A90A6F /* SBJsonStreamParserAdapter.m */,
+				CE2068FD1673807600A90A6F /* SBJsonStreamParserState.h */,
+				CE2068FE1673807600A90A6F /* SBJsonStreamParserState.m */,
+				CE2068FF1673807600A90A6F /* SBJsonStreamWriter.h */,
+				CE2069001673807600A90A6F /* SBJsonStreamWriter.m */,
+				CE2069011673807600A90A6F /* SBJsonStreamWriterAccumulator.h */,
+				CE2069021673807600A90A6F /* SBJsonStreamWriterAccumulator.m */,
+				CE2069031673807600A90A6F /* SBJsonStreamWriterState.h */,
+				CE2069041673807600A90A6F /* SBJsonStreamWriterState.m */,
+				CE2069051673807600A90A6F /* SBJsonTokeniser.h */,
+				CE2069061673807600A90A6F /* SBJsonTokeniser.m */,
+				CE2069071673807600A90A6F /* SBJsonUTF8Stream.h */,
+				CE2069081673807600A90A6F /* SBJsonUTF8Stream.m */,
+				CE2069091673807600A90A6F /* SBJsonWriter.h */,
+				CE20690A1673807600A90A6F /* SBJsonWriter.m */,
+			);
+			path = SBJSON;
+			sourceTree = "<group>";
+		};
+		CE2069181673807D00A90A6F /* JASidePanels */ = {
+			isa = PBXGroup;
+			children = (
+				CE2069191673807D00A90A6F /* JASidePanelController.h */,
+				CE20691A1673807D00A90A6F /* JASidePanelController.m */,
+				CE20691B1673807D00A90A6F /* UIViewController+JASidePanel.h */,
+				CE20691C1673807D00A90A6F /* UIViewController+JASidePanel.m */,
+			);
+			path = JASidePanels;
+			sourceTree = "<group>";
+		};
+		CE20691F1673808700A90A6F /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				CE2069201673808700A90A6F /* arrow.png */,
+				CE2069211673808700A90A6F /* PullRefreshTableViewController.h */,
+				CE2069221673808700A90A6F /* PullRefreshTableViewController.m */,
+			);
+			path = PullToRefresh;
+			sourceTree = "<group>";
+		};
+		CE6983DA16737FB600BC6799 = {
+			isa = PBXGroup;
+			children = (
+				CE20692F167380CA00A90A6F /* QuartzCore.framework */,
+				CE6983EF16737FB600BC6799 /* jmessage */,
+				CE6983E816737FB600BC6799 /* Frameworks */,
+				CE6983E616737FB600BC6799 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE6983E616737FB600BC6799 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE6983E516737FB600BC6799 /* jmessage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE6983E816737FB600BC6799 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE6983E916737FB600BC6799 /* UIKit.framework */,
+				CE6983EB16737FB600BC6799 /* Foundation.framework */,
+				CE6983ED16737FB600BC6799 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE6983EF16737FB600BC6799 /* jmessage */ = {
+			isa = PBXGroup;
+			children = (
+				CE2069251673809B00A90A6F /* DVAppDelegate.h */,
+				CE2069261673809B00A90A6F /* DVAppDelegate.m */,
+				CE2069271673809B00A90A6F /* DVConstants.h */,
+				CE2069281673809B00A90A6F /* DVDownloader.h */,
+				CE2069291673809B00A90A6F /* DVDownloader.m */,
+				CE20692A1673809B00A90A6F /* DVRootViewController.h */,
+				CE20692B1673809B00A90A6F /* DVRootViewController.m */,
+				CE20692C1673809B00A90A6F /* DVSettingsViewController.h */,
+				CE20692D1673809B00A90A6F /* DVSettingsViewController.m */,
+				CE20692E1673809B00A90A6F /* DVSettingsViewController.xib */,
+				CE20691F1673808700A90A6F /* PullToRefresh */,
+				CE2069181673807D00A90A6F /* JASidePanels */,
+				CE2068F11673807600A90A6F /* SBJSON */,
+				CE6983F016737FB600BC6799 /* Supporting Files */,
+			);
+			path = jmessage;
+			sourceTree = "<group>";
+		};
+		CE6983F016737FB600BC6799 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE6983F116737FB600BC6799 /* jmessage-Info.plist */,
+				CE6983F216737FB600BC6799 /* InfoPlist.strings */,
+				CE6983F516737FB600BC6799 /* main.m */,
+				CE6983F716737FB600BC6799 /* jmessage-Prefix.pch */,
+				CE6983FB16737FB600BC6799 /* Default.png */,
+				CE6983FD16737FB600BC6799 /* Default@2x.png */,
+				CE6983FF16737FB600BC6799 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE6983E416737FB600BC6799 /* jmessage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE69840316737FB600BC6799 /* Build configuration list for PBXNativeTarget "jmessage" */;
+			buildPhases = (
+				CE6983E116737FB600BC6799 /* Sources */,
+				CE6983E216737FB600BC6799 /* Frameworks */,
+				CE6983E316737FB600BC6799 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jmessage;
+			productName = jmessage;
+			productReference = CE6983E516737FB600BC6799 /* jmessage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE6983DC16737FB600BC6799 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DV;
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = CE6983DF16737FB600BC6799 /* Build configuration list for PBXProject "jmessage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE6983DA16737FB600BC6799;
+			productRefGroup = CE6983E616737FB600BC6799 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE6983E416737FB600BC6799 /* jmessage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE6983E316737FB600BC6799 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6983F416737FB600BC6799 /* InfoPlist.strings in Resources */,
+				CE6983FC16737FB600BC6799 /* Default.png in Resources */,
+				CE6983FE16737FB600BC6799 /* Default@2x.png in Resources */,
+				CE69840016737FB600BC6799 /* Default-568h@2x.png in Resources */,
+				CE2069231673808700A90A6F /* arrow.png in Resources */,
+				CE206935167381B200A90A6F /* DVSettingsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE6983E116737FB600BC6799 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6983F616737FB600BC6799 /* main.m in Sources */,
+				CE20690B1673807600A90A6F /* NSObject+SBJson.m in Sources */,
+				CE20690C1673807600A90A6F /* SBJsonParser.m in Sources */,
+				CE20690D1673807600A90A6F /* SBJsonStreamParser.m in Sources */,
+				CE20690E1673807600A90A6F /* SBJsonStreamParserAccumulator.m in Sources */,
+				CE20690F1673807600A90A6F /* SBJsonStreamParserAdapter.m in Sources */,
+				CE2069101673807600A90A6F /* SBJsonStreamParserState.m in Sources */,
+				CE2069111673807600A90A6F /* SBJsonStreamWriter.m in Sources */,
+				CE2069121673807600A90A6F /* SBJsonStreamWriterAccumulator.m in Sources */,
+				CE2069131673807600A90A6F /* SBJsonStreamWriterState.m in Sources */,
+				CE2069141673807600A90A6F /* SBJsonTokeniser.m in Sources */,
+				CE2069151673807600A90A6F /* SBJsonUTF8Stream.m in Sources */,
+				CE2069161673807600A90A6F /* SBJsonWriter.m in Sources */,
+				CE20691D1673807D00A90A6F /* JASidePanelController.m in Sources */,
+				CE20691E1673807D00A90A6F /* UIViewController+JASidePanel.m in Sources */,
+				CE2069241673808700A90A6F /* PullRefreshTableViewController.m in Sources */,
+				CE2069311673817E00A90A6F /* DVAppDelegate.m in Sources */,
+				CE2069321673818200A90A6F /* DVDownloader.m in Sources */,
+				CE2069331673818500A90A6F /* DVRootViewController.m in Sources */,
+				CE2069341673818800A90A6F /* DVSettingsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE6983F216737FB600BC6799 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE6983F316737FB600BC6799 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE69840116737FB600BC6799 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CE69840216737FB600BC6799 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE69840416737FB600BC6799 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "jmessage/jmessage-Prefix.pch";
+				INFOPLIST_FILE = "jmessage/jmessage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CE69840516737FB600BC6799 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "jmessage/jmessage-Prefix.pch";
+				INFOPLIST_FILE = "jmessage/jmessage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE6983DF16737FB600BC6799 /* Build configuration list for PBXProject "jmessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE69840116737FB600BC6799 /* Debug */,
+				CE69840216737FB600BC6799 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE69840316737FB600BC6799 /* Build configuration list for PBXNativeTarget "jmessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE69840416737FB600BC6799 /* Debug */,
+				CE69840516737FB600BC6799 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE6983DC16737FB600BC6799 /* Project object */;
+}
