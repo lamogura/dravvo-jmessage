@@ -13,7 +13,7 @@
 
 
 @property (strong, nonatomic) NSMutableArray *connections;
-@property (strong, nonatomic) NSMutableArray *messages;
+@property (strong, nonatomic) NSArray *messages;
 
 - (void) finishedDownloading: (NSNotification *) notification;
 

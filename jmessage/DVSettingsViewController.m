@@ -110,7 +110,8 @@
         } else {
             NSLog(@"POST message saved successfully.");
 
-            [self performSelector:@selector(messageSavedSuccessfully) withObject:nil afterDelay:2];
+            // TODO: this is only to simulate a reload time, should actually try to wait until a reload
+            [self performSelector:@selector(messageSavedSuccessfully) withObject:nil afterDelay:1];
         }
     }
     

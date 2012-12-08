@@ -39,11 +39,11 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)err {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"downloadFinished" object:self userInfo:[NSDictionary dictionaryWithObject:err forKey:@"error"]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"downloadDone" object:self userInfo:[NSDictionary dictionaryWithObject:err forKey:@"error"]];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"downloadFinished" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"downloadDone" object:self];
 }
 
 @end
