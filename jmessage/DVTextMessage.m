@@ -19,9 +19,9 @@
 - (id)initWithDictionary:(NSDictionary *) dict {
     self = [super init];
     if (self) {
-        self.username   = [dict objectForKey:@"username"];
-        self.messageText    = [dict objectForKey:@"message_text"];
-        self.dbID       = [dict objectForKey:@"_id"];
+        self.username    = [dict objectForKey:@"username"];
+        self.messageText = [dict objectForKey:@"message_text"];
+        self.dbID        = [dict objectForKey:@"_id"];
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS";

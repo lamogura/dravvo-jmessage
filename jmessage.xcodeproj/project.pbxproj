@@ -100,6 +100,7 @@
 		CEB76B5D16738A7700A4E551 /* DVAPIWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVAPIWrapper.m; sourceTree = "<group>"; };
 		CEB76B5E16738A7700A4E551 /* DVTextMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTextMessage.h; sourceTree = "<group>"; };
 		CEB76B5F16738A7700A4E551 /* DVTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVTextMessage.m; sourceTree = "<group>"; };
+		CEC05DD41674393A00DAB552 /* DVMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVMacros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,10 +202,11 @@
 		CE6983EF16737FB600BC6799 /* jmessage */ = {
 			isa = PBXGroup;
 			children = (
-				CEB76B6316738A8500A4E551 /* myLibrary */,
+				CE2069271673809B00A90A6F /* DVConstants.h */,
+				CEC05DD41674393A00DAB552 /* DVMacros.h */,
+				CEB76B6316738A8500A4E551 /* MyWrappers */,
 				CE2069251673809B00A90A6F /* DVAppDelegate.h */,
 				CE2069261673809B00A90A6F /* DVAppDelegate.m */,
-				CE2069271673809B00A90A6F /* DVConstants.h */,
 				CE20692A1673809B00A90A6F /* DVRootViewController.h */,
 				CE20692B1673809B00A90A6F /* DVRootViewController.m */,
 				CE20692C1673809B00A90A6F /* DVSettingsViewController.h */,
@@ -232,17 +234,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CEB76B6316738A8500A4E551 /* myLibrary */ = {
+		CEB76B6316738A8500A4E551 /* MyWrappers */ = {
 			isa = PBXGroup;
 			children = (
-				CEB76B5C16738A7700A4E551 /* DVAPIWrapper.h */,
 				CE2069281673809B00A90A6F /* DVDownloader.h */,
 				CE2069291673809B00A90A6F /* DVDownloader.m */,
+				CEB76B5C16738A7700A4E551 /* DVAPIWrapper.h */,
 				CEB76B5D16738A7700A4E551 /* DVAPIWrapper.m */,
 				CEB76B5E16738A7700A4E551 /* DVTextMessage.h */,
 				CEB76B5F16738A7700A4E551 /* DVTextMessage.m */,
 			);
-			name = myLibrary;
+			name = MyWrappers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

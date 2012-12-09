@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define DVDownloaderDidFinishDownloading @"DVDownloaderDidFinishDownloading"
+
 @interface DVDownloader : NSObject <NSURLConnectionDataDelegate>
 
 @property (strong, nonatomic) NSMutableData *receivedData;

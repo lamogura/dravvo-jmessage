@@ -10,12 +10,16 @@
 #import "JASidePanelController.h"
 
 #import "DVSettingsViewController.h"
+#import "DVAPIWrapper.h"
 #import "DVDownloader.h"
 #import "DVConstants.h"
+#import "DVMacros.h"
 
-@interface DVSettingsViewController ()
+@interface DVSettingsViewController () {
+    DVAPIWrapper *apiWrapper;
+}
 - (void) hideKeyboard;
-- (void) messageSavedSuccessfully;
+- (void) onMessageSavedSuccessfully;
 @end
 
 @implementation DVSettingsViewController
@@ -27,7 +31,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self->apiWrapper = [[DVAPIWrapper alloc] init];
     }
     return self;
 }
@@ -44,7 +48,7 @@
     // load settings
     if ([[NSUserDefaults standardUserDefaults] stringForKey:@"username"] != nil) {
         usernameTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-        NSLog(@"Loaded username '%@' from NSUserDefaults", usernameTextField.text);
+        DLog(@"Loaded username '%@' from NSUserDefaults", usernameTextField.text);
     }
 }
 
@@ -60,65 +64,28 @@
     [super viewDidUnload];
 }
 
-#pragma mark - Download Request Handling
+#pragma mark - DVAPIWrapper Calls
 - (IBAction) sendTextMessage:(id)sender {
+    DVTextMessage *newMsg = [[DVTextMessage alloc] init];
+    newMsg.username = usernameTextField.text;
+    newMsg.messageText = messageTextField.text;
     
-    NSString *urlString = [NSString stringWithFormat:@"%@/message/new", kBaseURL];
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSString *dataString = [NSString stringWithFormat:@"username=%@&message_text=%@",[usernameTextField text], [messageTextField text]];
-    NSString *dataLength = [NSString stringWithFormat:@"%d", [dataString length]];
-    NSData *data = [dataString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
-    
-    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
-    [req setHTTPMethod:@"POST"];
-    [req setValue:dataLength forHTTPHeaderField:@"Content-Length"];
-    [req setHTTPBody:data];
-    
-    NSLog(@"POST to '%@' with body '%@'", urlString, dataString);
-    DVDownloader *downloader = [[DVDownloader alloc] initWithRequest:req];
-    [self.connections addObject:downloader];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishedDownloading:) name:@"downloadFinished" object:downloader];
-   
-    [downloader.connection start]; // setup to have to start manually
-}
-
-- (void) finishedDownloading: (NSNotification *) notification {
-    DVDownloader *downloader = [notification object];
-    if (notification.userInfo) {
-        NSError *err = [notification.userInfo objectForKey:@"error"];
-        NSLog(@"Received error '%@'", [err localizedDescription]);
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"error"
-                                                     message:[err localizedDescription]
-                                                    delegate:nil
-                                           cancelButtonTitle:@"ok"
-                                           otherButtonTitles:nil];
-        [av show];
-    } else {
-        NSString *jsonString = [[NSString alloc] initWithData:downloader.receivedData encoding:NSUTF8StringEncoding];
-        NSLog(@"Received JSON response: %@", jsonString);
-        NSDictionary *resp = [jsonString JSONValue];
-        if ([resp valueForKey:@"error"] != nil) {
-            NSString *errorString = [[resp objectForKey:@"error"] objectForKey:@"message"];
-            NSLog(@"Contained an error: %@", errorString);
-            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                         message:errorString
+    [self->apiWrapper sendMessage:newMsg AndCallBlock:^(NSError *error, DVTextMessage *msg) {
+        if (error != nil) {
+            DLog(@"Received error '%@'", [error localizedDescription]);
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"error"
+                                                         message:[error localizedDescription]
                                                         delegate:nil
                                                cancelButtonTitle:@"ok"
                                                otherButtonTitles:nil];
             [av show];
         } else {
-            NSLog(@"POST message saved successfully.");
-
-            // TODO: this is only to simulate a reload time, should actually try to wait until a reload
-            [self performSelector:@selector(messageSavedSuccessfully) withObject:nil afterDelay:1];
+            [self performSelector:@selector(onMessageSavedSuccessfully) withObject:nil afterDelay:1];
         }
-    }
-    
-    [self.connections removeObject:downloader];
+    }];
 }
 
-- (void) messageSavedSuccessfully {
+- (void) onMessageSavedSuccessfully {
     // this class is used as a left sliding panel, so we want to close ourselfs sometimes
     JASidePanelController *parent = (JASidePanelController *)[self parentViewController];
     [parent toggleLeftPanel:nil];
@@ -134,7 +101,7 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField {
     if ([textField isEqual:usernameTextField]) {
-        NSLog(@"Saving username '%@' to defaults", usernameTextField.text);
+        DLog(@"Saving username '%@' to defaults", usernameTextField.text);
         [[NSUserDefaults standardUserDefaults] setObject:usernameTextField.text forKey:@"username"];
     }
 }

@@ -11,10 +11,4 @@
 
 @interface DVRootViewController : PullRefreshTableViewController
 
-
-@property (strong, nonatomic) NSMutableArray *connections;
-@property (strong, nonatomic) NSArray *messages;
-
-- (void) finishedDownloading: (NSNotification *) notification;
-
 @end

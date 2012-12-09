@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DVTextMessage.h"
 
-@interface DVAPIWrapper : NSObject {
-    void (^callbackBlock)(NSError *, NSArray *);
-}
+@interface DVAPIWrapper : NSObject
+
+- (id) init;
 
 - (void) getAllMessagesAndCallBlock:(void (^)(NSError *, NSArray *))block;
-- (void) finishedGettingMessages: (NSNotification *) notification;
+- (void) sendMessage:(DVTextMessage *)msg AndCallBlock:(void (^)(NSError *, DVTextMessage *msg))block;
 
 @end

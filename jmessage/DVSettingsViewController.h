@@ -11,11 +11,9 @@
 
 @interface DVSettingsViewController : UIViewController <UITextFieldDelegate>
 
-@property (strong, nonatomic) NSMutableArray *connections;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *messageTextField;
 
-- (void) finishedDownloading: (NSNotification *) notification;
 - (IBAction) sendTextMessage:(id)sender;
 
 @end

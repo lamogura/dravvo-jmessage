@@ -14,21 +14,23 @@
 #import "DVDownloader.h"
 #import "DVConstants.h"
 #import "DVTextMessage.h"
+#import "DVMacros.h"
 
-@interface DVRootViewController ()
+@interface DVRootViewController () {
+    DVAPIWrapper *apiWrapper;
+    NSArray *textMessages;
+}
 
 @end
 
 @implementation DVRootViewController
-@synthesize connections;
-@synthesize messages;
 
 #pragma mark - Initialization Code
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self->apiWrapper = [[DVAPIWrapper alloc] init];
     }
     return self;
 }
@@ -42,7 +44,7 @@
     // want to watch for when we are sliding back to main window so we can refresh the messages
     JASidePanelController *parent = (JASidePanelController *)[[self parentViewController] parentViewController];
     [parent addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
-
+    
     [self refresh];
 }
 - (void)didReceiveMemoryWarning
@@ -58,17 +60,16 @@
 #pragma mark - Key Value Observing
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"state"] && [[change objectForKey:@"new"] isEqualToNumber:[NSNumber numberWithInt:1]]) {
-        NSLog(@"Observed a slide back to center panel, refreshing...");
+        DLog(@"Observed a slide back to center panel, refreshing...");
         [self refresh];
     }
 }
 
 #pragma mark - PullToRefresh Overloads
 - (void) refresh {
-    DVAPIWrapper *api = [[DVAPIWrapper alloc] init];
-    [api getAllMessagesAndCallBlock:^(NSError *err, NSArray *msgs) {
+    [self->apiWrapper getAllMessagesAndCallBlock:^(NSError *err, NSArray *msgs) {
         if (err != nil) {
-            NSLog(@"Received error '%@'", [err localizedDescription]);
+            DLog(@"Received error '%@'", [err localizedDescription]);
             UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"error"
                                                          message:[err localizedDescription]
                                                         delegate:nil
@@ -76,16 +77,16 @@
                                                otherButtonTitles:nil];
             [av show];
         } else {
-            self.messages = msgs;
+            self->textMessages = msgs;
             [self stopLoading];
             [self.tableView reloadData];
         }
     }];
- }
+}
 
 #pragma mark - TableView Datasource Code
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.messages count];
+    return [self->textMessages count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -95,14 +96,14 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-
-    DVTextMessage *msg = [self.messages objectAtIndex:indexPath.row];
+    
+    DVTextMessage *msg = [self->textMessages objectAtIndex:indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", msg.username, msg.messageText];
-
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"MMM d, yyyy @ H:mm:ss";
     cell.detailTextLabel.text = [formatter stringFromDate:msg.receivedAt];
-
+    
     return cell;
 }
 
