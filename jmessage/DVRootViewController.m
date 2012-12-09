@@ -76,6 +76,7 @@
                                                cancelButtonTitle:@"ok"
                                                otherButtonTitles:nil];
             [av show];
+            [self stopLoading];
         } else {
             self->textMessages = [NSMutableArray arrayWithArray:msgs];
             [self stopLoading];
