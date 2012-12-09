@@ -1,4 +1,4 @@
-dravvo-iostest
+jMessage
 ==============
 
-test interface for client front end
+a test messaging app to learn the ropes in server/client api interaction
