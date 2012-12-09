@@ -15,5 +15,6 @@
 
 - (void) getAllMessagesAndCallBlock:(void (^)(NSError *, NSArray *))block;
 - (void) sendMessage:(DVTextMessage *)msg AndCallBlock:(void (^)(NSError *, DVTextMessage *msg))block;
+- (void) deleteMessage:(DVTextMessage *)msg AndCallBlock:(void (^)(NSError *))block;
 
 @end

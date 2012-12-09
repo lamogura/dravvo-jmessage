@@ -107,4 +107,9 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    DVTextMessage *msg = [self->textMessages objectAtIndex:indexPath.row];
+    [self->apiWrapper deleteMessage:msg AndCallBlock:nil];
+}
+
 @end

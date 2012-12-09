@@ -202,9 +202,9 @@
 		CE6983EF16737FB600BC6799 /* jmessage */ = {
 			isa = PBXGroup;
 			children = (
+				CEB76B6316738A8500A4E551 /* MyWrappers */,
 				CE2069271673809B00A90A6F /* DVConstants.h */,
 				CEC05DD41674393A00DAB552 /* DVMacros.h */,
-				CEB76B6316738A8500A4E551 /* MyWrappers */,
 				CE2069251673809B00A90A6F /* DVAppDelegate.h */,
 				CE2069261673809B00A90A6F /* DVAppDelegate.m */,
 				CE20692A1673809B00A90A6F /* DVRootViewController.h */,
