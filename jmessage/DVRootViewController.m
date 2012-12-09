@@ -45,7 +45,7 @@
     JASidePanelController *parent = (JASidePanelController *)[[self parentViewController] parentViewController];
     [parent addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
     
-    [self refresh];
+//    [self refresh];
 }
 - (void)didReceiveMemoryWarning
 {

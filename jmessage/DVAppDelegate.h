@@ -13,8 +13,8 @@
 
 @interface DVAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) JASidePanelController *viewController;
 
 @end

@@ -39,6 +39,7 @@
 		CE69840016737FB600BC6799 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6983FF16737FB600BC6799 /* Default-568h@2x.png */; };
 		CEB76B6016738A7700A4E551 /* DVAPIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB76B5D16738A7700A4E551 /* DVAPIWrapper.m */; };
 		CEB76B6116738A7700A4E551 /* DVTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB76B5F16738A7700A4E551 /* DVTextMessage.m */; };
+		CECB04321674BBF6003A2D43 /* DVUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB04311674BBF6003A2D43 /* DVUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,8 @@
 		CEB76B5E16738A7700A4E551 /* DVTextMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTextMessage.h; sourceTree = "<group>"; };
 		CEB76B5F16738A7700A4E551 /* DVTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVTextMessage.m; sourceTree = "<group>"; };
 		CEC05DD41674393A00DAB552 /* DVMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVMacros.h; sourceTree = "<group>"; };
+		CECB04301674BBF6003A2D43 /* DVUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVUtils.h; sourceTree = "<group>"; };
+		CECB04311674BBF6003A2D43 /* DVUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +205,7 @@
 		CE6983EF16737FB600BC6799 /* jmessage */ = {
 			isa = PBXGroup;
 			children = (
-				CEB76B6316738A8500A4E551 /* MyWrappers */,
+				CEB76B6316738A8500A4E551 /* My Library */,
 				CE2069271673809B00A90A6F /* DVConstants.h */,
 				CEC05DD41674393A00DAB552 /* DVMacros.h */,
 				CE2069251673809B00A90A6F /* DVAppDelegate.h */,
@@ -234,7 +237,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CEB76B6316738A8500A4E551 /* MyWrappers */ = {
+		CEB76B6316738A8500A4E551 /* My Library */ = {
 			isa = PBXGroup;
 			children = (
 				CE2069281673809B00A90A6F /* DVDownloader.h */,
@@ -243,8 +246,10 @@
 				CEB76B5D16738A7700A4E551 /* DVAPIWrapper.m */,
 				CEB76B5E16738A7700A4E551 /* DVTextMessage.h */,
 				CEB76B5F16738A7700A4E551 /* DVTextMessage.m */,
+				CECB04301674BBF6003A2D43 /* DVUtils.h */,
+				CECB04311674BBF6003A2D43 /* DVUtils.m */,
 			);
-			name = MyWrappers;
+			name = "My Library";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +341,7 @@
 				CE2069341673818800A90A6F /* DVSettingsViewController.m in Sources */,
 				CEB76B6016738A7700A4E551 /* DVAPIWrapper.m in Sources */,
 				CEB76B6116738A7700A4E551 /* DVTextMessage.m in Sources */,
+				CECB04321674BBF6003A2D43 /* DVUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,13 +412,14 @@
 		CE69840416737FB600BC6799 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Justin Kovalchuk (S596SBTCUU)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jmessage/jmessage-Prefix.pch";
 				INFOPLIST_FILE = "jmessage/jmessage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F21BD495-63C9-4556-9A67-34F6A3D115EE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -420,13 +427,13 @@
 		CE69840516737FB600BC6799 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jmessage/jmessage-Prefix.pch";
 				INFOPLIST_FILE = "jmessage/jmessage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
