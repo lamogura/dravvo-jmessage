@@ -18,7 +18,7 @@
 
 @interface DVRootViewController () {
     DVAPIWrapper *apiWrapper;
-    NSArray *textMessages;
+    NSMutableArray *textMessages;
 }
 
 @end
@@ -77,7 +77,7 @@
                                                otherButtonTitles:nil];
             [av show];
         } else {
-            self->textMessages = msgs;
+            self->textMessages = [NSMutableArray arrayWithArray:msgs];
             [self stopLoading];
             [self.tableView reloadData];
         }
@@ -109,7 +109,21 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     DVTextMessage *msg = [self->textMessages objectAtIndex:indexPath.row];
-    [self->apiWrapper deleteMessage:msg AndCallBlock:nil];
+    [self->apiWrapper deleteMessage:msg AndCallBlock:^(NSError *err) {
+        if (err != nil) {
+            DLog(@"Received error '%@'", [err localizedDescription]);
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"error"
+                                                         message:[err localizedDescription]
+                                                        delegate:nil
+                                               cancelButtonTitle:@"ok"
+                                               otherButtonTitles:nil];
+            [av show];
+        } else {
+            DLog(@"Sucessfully deleted message on server, removing from local array.");
+            [self->textMessages removeObject:msg];
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 @end

@@ -98,7 +98,40 @@
 }
 
 - (void) deleteMessage:(DVTextMessage *)msg AndCallBlock:(void (^)(NSError *))block {
+    NSString *urlString = [NSString stringWithFormat:@"%@/message/%@/delete", kBaseURL, msg.dbID];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    [req setHTTPMethod:@"DELETE"];
+
+    DLog(@"DELETE to '%@'", urlString);
+    DVDownloader *downloader = [[DVDownloader alloc] initWithRequest:req];
+    [self->connections addObject:downloader];
     
+    id observer = [[NSNotificationCenter defaultCenter] addObserverForName:DVDownloaderDidFinishDownloading object:downloader queue:nil usingBlock:^(NSNotification *notification) {
+        if (notification.userInfo) {
+            NSError *error = [notification.userInfo objectForKey:@"error"];
+            block(error);
+        } else {
+            NSString *jsonString = [[NSString alloc] initWithData:downloader.receivedData encoding:NSUTF8StringEncoding];
+            DLog(@"Received JSON response: %@", jsonString);
+            NSDictionary *resp = [jsonString JSONValue];
+            
+            if ([resp valueForKey:@"error"] != nil) {
+                NSString *errorString = [[resp objectForKey:@"error"] objectForKey:@"message"];
+                DLog(@"Contained an error: %@", errorString);
+                NSError *error = [NSError errorWithDomain:@"DVAPIWrapperErrorDomain" code:0 userInfo:@{NSLocalizedDescriptionKey : NSLocalizedString(errorString, @"")}];
+                block(error);
+            } else {
+                DLog(@"Deleted message successfully.");
+                block(nil);
+            }
+        }
+        
+        [self->connections removeObject:downloader];
+    }];
+    
+    [self->observers addObject:observer];
+    [downloader.connection start]; // setup to have to start manually
 }
 
 #pragma mark - Lifetime
