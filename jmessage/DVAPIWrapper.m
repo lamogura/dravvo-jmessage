@@ -27,7 +27,7 @@
 - (void) getAllMessagesAndCallBlock:(void (^)(NSError *,NSArray *))block {
     NSString *urlString = [NSString stringWithFormat:@"%@/message/all", kBaseURL];
     NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30.0];
     
     DVDownloader *downloader = [[DVDownloader alloc] initWithRequest:req];
     DLog(@"Get to '%@'", urlString);
@@ -60,7 +60,7 @@
     NSString *dataLength = [NSString stringWithFormat:@"%d", [dataString length]];
     NSData *data = [dataString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
     
-    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30.0];
     [req setHTTPMethod:@"POST"];
     [req setValue:dataLength forHTTPHeaderField:@"Content-Length"];
     [req setHTTPBody:data];
@@ -100,7 +100,7 @@
 - (void) deleteMessage:(DVTextMessage *)msg AndCallBlock:(void (^)(NSError *))block {
     NSString *urlString = [NSString stringWithFormat:@"%@/message/%@/delete", kBaseURL, msg.dbID];
     NSURL *url = [NSURL URLWithString:urlString];
-    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30.0];
     [req setHTTPMethod:@"DELETE"];
 
     DLog(@"DELETE to '%@'", urlString);
