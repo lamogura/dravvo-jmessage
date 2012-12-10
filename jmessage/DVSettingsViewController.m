@@ -19,7 +19,6 @@
     DVAPIWrapper *apiWrapper;
 }
 - (void) hideKeyboard;
-- (void) onMessageSavedSuccessfully;
 @end
 
 @implementation DVSettingsViewController
@@ -80,17 +79,13 @@
                                                otherButtonTitles:nil];
             [av show];
         } else {
-            [self performSelector:@selector(onMessageSavedSuccessfully) withObject:nil afterDelay:1];
+            DLog(@"Send completed successfully.");
+            JASidePanelController *parent = (JASidePanelController *)[self parentViewController];
+            [parent toggleLeftPanel:nil];
+            
+            messageTextField.text = @"";
         }
     }];
-}
-
-- (void) onMessageSavedSuccessfully {
-    // this class is used as a left sliding panel, so we want to close ourselfs sometimes
-    JASidePanelController *parent = (JASidePanelController *)[self parentViewController];
-    [parent toggleLeftPanel:nil];
-    
-    messageTextField.text = @"";
 }
 
 #pragma mark - UITextField Delegates
