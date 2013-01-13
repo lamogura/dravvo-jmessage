@@ -46,7 +46,7 @@
 
 /* Begin PBXFileReference section */
 		CE080FF816A2818700B31DEF /* jicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jicon@2x.png"; path = "../jicon@2x.png"; sourceTree = "<group>"; };
-		CE080FFB16A2819700B31DEF /* jicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jicon.png; sourceTree = "<group>"; };
+		CE080FFB16A2819700B31DEF /* jicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jicon.png; path = ../jicon.png; sourceTree = "<group>"; };
 		CE2068F21673807600A90A6F /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		CE2068F31673807600A90A6F /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		CE2068F41673807600A90A6F /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -181,7 +181,6 @@
 		CE6983DA16737FB600BC6799 = {
 			isa = PBXGroup;
 			children = (
-				CE080FFB16A2819700B31DEF /* jicon.png */,
 				CE20692F167380CA00A90A6F /* QuartzCore.framework */,
 				CE6983EF16737FB600BC6799 /* jmessage */,
 				CE6983E816737FB600BC6799 /* Frameworks */,
@@ -231,6 +230,7 @@
 		CE6983F016737FB600BC6799 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE080FFB16A2819700B31DEF /* jicon.png */,
 				CE080FF816A2818700B31DEF /* jicon@2x.png */,
 				CE6983F116737FB600BC6799 /* jmessage-Info.plist */,
 				CE6983F216737FB600BC6799 /* InfoPlist.strings */,
