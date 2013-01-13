@@ -45,9 +45,9 @@
 }
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    NSString *urlString = [NSString stringWithFormat:@"%@/apns/testsend", kBaseURL];
+    NSString *urlString = [NSString stringWithFormat:@"%@/apns/register", kBaseURL];
     NSURL *url = [NSURL URLWithString:urlString];
-    NSString *dataString = [NSString stringWithFormat:@"deviceID=%@", [DVUtils hexadecimalStringFromData:deviceToken]];
+    NSString *dataString = [NSString stringWithFormat:@"deviceToken=%@", [DVUtils hexadecimalStringFromData:deviceToken]];
     NSString *dataLength = [NSString stringWithFormat:@"%d", [dataString length]];
     NSData *data = [dataString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
     
@@ -64,7 +64,7 @@
             NSError *err = [notification.userInfo objectForKey:@"error"];
             DLog(@"%@", [err localizedDescription]);
         } else {
-            DLog(@"success");
+            DLog(@"Sucessfully registered device token with Dravvo server.");
             // TODO: we should stop registering in the future once this device succesffully saved on the server
 //            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"didRegisterAPNS"];
             [self performSelector:@selector(removeAllDVDownloadObservers) withObject:nil afterDelay:1];

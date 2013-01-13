@@ -12,5 +12,7 @@
 //    #define kBaseURL @"http://dravvo.ap01.aws.af.cm"
 //#endif
 
-//#define kBaseURL @"http://dravvo.ap01.aws.af.cm"
-#define kBaseURL @"http://192.168.1.100:3000"
+#define kBaseURL @"http://dravvo.ap01.aws.af.cm"
+//#define kBaseURL @"http://192.168.1.108:3000"
+//#define kBaseURL @"http://192.168.20.2:3000"
+

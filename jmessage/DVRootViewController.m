@@ -45,7 +45,7 @@
     JASidePanelController *parent = (JASidePanelController *)[[self parentViewController] parentViewController];
     [parent addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
     
-//    [self refresh];
+    [self refresh];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -70,7 +70,7 @@
     [self->apiWrapper getAllMessagesAndCallBlock:^(NSError *err, NSArray *msgs) {
         if (err != nil) {
             DLog(@"Received error '%@'", [err localizedDescription]);
-            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"error"
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error"
                                                          message:[err localizedDescription]
                                                         delegate:nil
                                                cancelButtonTitle:@"ok"
@@ -113,7 +113,7 @@
     [self->apiWrapper deleteMessage:msg AndCallBlock:^(NSError *err) {
         if (err != nil) {
             DLog(@"Received error '%@'", [err localizedDescription]);
-            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"error"
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error"
                                                          message:[err localizedDescription]
                                                         delegate:nil
                                                cancelButtonTitle:@"ok"
