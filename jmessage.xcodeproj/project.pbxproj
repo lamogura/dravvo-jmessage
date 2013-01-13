@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE080FF916A2818700B31DEF /* jicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE080FF816A2818700B31DEF /* jicon@2x.png */; };
+		CE080FFC16A2819700B31DEF /* jicon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE080FFB16A2819700B31DEF /* jicon.png */; };
 		CE20690B1673807600A90A6F /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2068F31673807600A90A6F /* NSObject+SBJson.m */; };
 		CE20690C1673807600A90A6F /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2068F61673807600A90A6F /* SBJsonParser.m */; };
 		CE20690D1673807600A90A6F /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2068F81673807600A90A6F /* SBJsonStreamParser.m */; };
@@ -29,21 +31,22 @@
 		CE2069331673818500A90A6F /* DVRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20692B1673809B00A90A6F /* DVRootViewController.m */; };
 		CE2069341673818800A90A6F /* DVSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20692D1673809B00A90A6F /* DVSettingsViewController.m */; };
 		CE206935167381B200A90A6F /* DVSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE20692E1673809B00A90A6F /* DVSettingsViewController.xib */; };
-		CE5E0A6D1674DEF90015D7DA /* jicon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5E0A6C1674DEF90015D7DA /* jicon.png */; };
-		CE5E0A6F1674DF320015D7DA /* jicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5E0A6E1674DF320015D7DA /* jicon@2x.png */; };
-		CE5E0A771674E59F0015D7DA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5E0A761674E59F0015D7DA /* Default@2x.png */; };
 		CE6983EA16737FB600BC6799 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6983E916737FB600BC6799 /* UIKit.framework */; };
 		CE6983EC16737FB600BC6799 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6983EB16737FB600BC6799 /* Foundation.framework */; };
 		CE6983EE16737FB600BC6799 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6983ED16737FB600BC6799 /* CoreGraphics.framework */; };
 		CE6983F416737FB600BC6799 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE6983F216737FB600BC6799 /* InfoPlist.strings */; };
 		CE6983F616737FB600BC6799 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6983F516737FB600BC6799 /* main.m */; };
 		CE6983FC16737FB600BC6799 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6983FB16737FB600BC6799 /* Default.png */; };
+		CE6983FE16737FB600BC6799 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6983FD16737FB600BC6799 /* Default@2x.png */; };
 		CE69840016737FB600BC6799 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6983FF16737FB600BC6799 /* Default-568h@2x.png */; };
 		CEB76B6016738A7700A4E551 /* DVAPIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB76B5D16738A7700A4E551 /* DVAPIWrapper.m */; };
 		CEB76B6116738A7700A4E551 /* DVTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB76B5F16738A7700A4E551 /* DVTextMessage.m */; };
+		CECB04321674BBF6003A2D43 /* DVUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CECB04311674BBF6003A2D43 /* DVUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE080FF816A2818700B31DEF /* jicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jicon@2x.png"; path = "../jicon@2x.png"; sourceTree = "<group>"; };
+		CE080FFB16A2819700B31DEF /* jicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jicon.png; path = ../jicon.png; sourceTree = "<group>"; };
 		CE2068F21673807600A90A6F /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		CE2068F31673807600A90A6F /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		CE2068F41673807600A90A6F /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -87,10 +90,7 @@
 		CE20692D1673809B00A90A6F /* DVSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DVSettingsViewController.m; sourceTree = "<group>"; };
 		CE20692E1673809B00A90A6F /* DVSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DVSettingsViewController.xib; sourceTree = "<group>"; };
 		CE20692F167380CA00A90A6F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CE5E0A6C1674DEF90015D7DA /* jicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jicon.png; sourceTree = "<group>"; };
-		CE5E0A6E1674DF320015D7DA /* jicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jicon@2x.png"; sourceTree = "<group>"; };
-		CE5E0A761674E59F0015D7DA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		CE6983E516737FB600BC6799 /*  jmessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = " jmessage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE6983E516737FB600BC6799 /* jmessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jmessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6983E916737FB600BC6799 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE6983EB16737FB600BC6799 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE6983ED16737FB600BC6799 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -99,12 +99,15 @@
 		CE6983F516737FB600BC6799 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE6983F716737FB600BC6799 /* jmessage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jmessage-Prefix.pch"; sourceTree = "<group>"; };
 		CE6983FB16737FB600BC6799 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CE6983FD16737FB600BC6799 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CE6983FF16737FB600BC6799 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CEB76B5C16738A7700A4E551 /* DVAPIWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVAPIWrapper.h; sourceTree = "<group>"; };
 		CEB76B5D16738A7700A4E551 /* DVAPIWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVAPIWrapper.m; sourceTree = "<group>"; };
 		CEB76B5E16738A7700A4E551 /* DVTextMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTextMessage.h; sourceTree = "<group>"; };
 		CEB76B5F16738A7700A4E551 /* DVTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVTextMessage.m; sourceTree = "<group>"; };
 		CEC05DD41674393A00DAB552 /* DVMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVMacros.h; sourceTree = "<group>"; };
+		CECB04301674BBF6003A2D43 /* DVUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVUtils.h; sourceTree = "<group>"; };
+		CECB04311674BBF6003A2D43 /* DVUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +191,7 @@
 		CE6983E616737FB600BC6799 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE6983E516737FB600BC6799 /*  jmessage.app */,
+				CE6983E516737FB600BC6799 /* jmessage.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,7 +209,7 @@
 		CE6983EF16737FB600BC6799 /* jmessage */ = {
 			isa = PBXGroup;
 			children = (
-				CEB76B6316738A8500A4E551 /* MyWrappers */,
+				CEB76B6316738A8500A4E551 /* My Library */,
 				CE2069271673809B00A90A6F /* DVConstants.h */,
 				CEC05DD41674393A00DAB552 /* DVMacros.h */,
 				CE2069251673809B00A90A6F /* DVAppDelegate.h */,
@@ -227,20 +230,20 @@
 		CE6983F016737FB600BC6799 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CE5E0A761674E59F0015D7DA /* Default@2x.png */,
-				CE5E0A6C1674DEF90015D7DA /* jicon.png */,
-				CE5E0A6E1674DF320015D7DA /* jicon@2x.png */,
+				CE080FFB16A2819700B31DEF /* jicon.png */,
+				CE080FF816A2818700B31DEF /* jicon@2x.png */,
 				CE6983F116737FB600BC6799 /* jmessage-Info.plist */,
 				CE6983F216737FB600BC6799 /* InfoPlist.strings */,
 				CE6983F516737FB600BC6799 /* main.m */,
 				CE6983F716737FB600BC6799 /* jmessage-Prefix.pch */,
 				CE6983FB16737FB600BC6799 /* Default.png */,
+				CE6983FD16737FB600BC6799 /* Default@2x.png */,
 				CE6983FF16737FB600BC6799 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CEB76B6316738A8500A4E551 /* MyWrappers */ = {
+		CEB76B6316738A8500A4E551 /* My Library */ = {
 			isa = PBXGroup;
 			children = (
 				CE2069281673809B00A90A6F /* DVDownloader.h */,
@@ -249,8 +252,10 @@
 				CEB76B5D16738A7700A4E551 /* DVAPIWrapper.m */,
 				CEB76B5E16738A7700A4E551 /* DVTextMessage.h */,
 				CEB76B5F16738A7700A4E551 /* DVTextMessage.m */,
+				CECB04301674BBF6003A2D43 /* DVUtils.h */,
+				CECB04311674BBF6003A2D43 /* DVUtils.m */,
 			);
-			name = MyWrappers;
+			name = "My Library";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +275,7 @@
 			);
 			name = jmessage;
 			productName = jmessage;
-			productReference = CE6983E516737FB600BC6799 /*  jmessage.app */;
+			productReference = CE6983E516737FB600BC6799 /* jmessage.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -306,12 +311,12 @@
 			files = (
 				CE6983F416737FB600BC6799 /* InfoPlist.strings in Resources */,
 				CE6983FC16737FB600BC6799 /* Default.png in Resources */,
+				CE6983FE16737FB600BC6799 /* Default@2x.png in Resources */,
 				CE69840016737FB600BC6799 /* Default-568h@2x.png in Resources */,
 				CE2069231673808700A90A6F /* arrow.png in Resources */,
 				CE206935167381B200A90A6F /* DVSettingsViewController.xib in Resources */,
-				CE5E0A6D1674DEF90015D7DA /* jicon.png in Resources */,
-				CE5E0A6F1674DF320015D7DA /* jicon@2x.png in Resources */,
-				CE5E0A771674E59F0015D7DA /* Default@2x.png in Resources */,
+				CE080FF916A2818700B31DEF /* jicon@2x.png in Resources */,
+				CE080FFC16A2819700B31DEF /* jicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +349,7 @@
 				CE2069341673818800A90A6F /* DVSettingsViewController.m in Sources */,
 				CEB76B6016738A7700A4E551 /* DVAPIWrapper.m in Sources */,
 				CEB76B6116738A7700A4E551 /* DVTextMessage.m in Sources */,
+				CECB04321674BBF6003A2D43 /* DVUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,13 +420,14 @@
 		CE69840416737FB600BC6799 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Justin Kovalchuk (S596SBTCUU)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jmessage/jmessage-Prefix.pch";
 				INFOPLIST_FILE = "jmessage/jmessage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				PRODUCT_NAME = " $(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F21BD495-63C9-4556-9A67-34F6A3D115EE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -428,13 +435,13 @@
 		CE69840516737FB600BC6799 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jmessage/jmessage-Prefix.pch";
 				INFOPLIST_FILE = "jmessage/jmessage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				PRODUCT_NAME = " $(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
