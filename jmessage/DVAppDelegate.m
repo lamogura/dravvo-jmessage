@@ -11,10 +11,21 @@
 #import "JASidePanelController.h"
 #import "DVSettingsViewController.h"
 
+#import "DVDownloader.h"
+#import "DVConstants.h"
+#import "DVMacros.h"
+#import "DVUtils.h"
+
+@interface DVAppDelegate () {
+    NSMutableSet *connections; // downloader connections live
+}
+@end
+
 @implementation DVAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[JASidePanelController alloc] init];
@@ -27,8 +38,52 @@
 
     self.window.rootViewController = self.viewController;
 
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSString *urlString = [NSString stringWithFormat:@"%@/apns/register", kBaseURL];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSString *dataString = [NSString stringWithFormat:@"deviceToken=%@", [DVUtils hexadecimalStringFromData:deviceToken]];
+    NSString *dataLength = [NSString stringWithFormat:@"%d", [dataString length]];
+    NSData *data = [dataString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
+    
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    [req setHTTPMethod:@"POST"];
+    [req setValue:dataLength forHTTPHeaderField:@"Content-Length"];
+    [req setHTTPBody:data];
+
+    DVDownloader *downloader = [[DVDownloader alloc] initWithRequest:req];
+    DLog(@"POST to '%@'", urlString);
+    
+    id observer = [[NSNotificationCenter defaultCenter] addObserverForName:DVDownloaderDidFinishDownloading object:downloader queue:nil usingBlock:^(NSNotification *notification) {
+        if (notification.userInfo) {
+            NSError *err = [notification.userInfo objectForKey:@"error"];
+            DLog(@"%@", [err localizedDescription]);
+        } else {
+            DLog(@"Sucessfully registered device token with Dravvo server.");
+            // TODO: we should stop registering in the future once this device succesffully saved on the server
+//            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"didRegisterAPNS"];
+            [self performSelector:@selector(removeAllDVDownloadObservers) withObject:nil afterDelay:1];
+        }
+    }];
+
+    [self->connections addObject:observer];
+    [downloader.connection start]; // setup to have to start manually
+}
+
+- (void)removeAllDVDownloadObservers {
+    for (id observer in self->connections) {
+        [[NSNotificationCenter defaultCenter] removeObserver:observer];
+    }
+    [self->connections removeAllObjects];
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    ULog(@"Error in registration. Error: %@", [err localizedDescription]);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
